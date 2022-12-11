@@ -1,0 +1,391 @@
+:root{
+    --pr-color: #009cff;
+    --sc-color:#F99500;
+    --dark-color:#333;
+    --light-color:#f3f3f3;
+    --max-width:1100px;
+}
+
+.category {
+    --sport-color: #f99500;
+    --ent-color: #a66bbe;
+    --tech-color: #009cff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--light-color);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Staatliches', cursive;
+    margin-bottom: .5rem;
+}
+a{
+    text-decoration: none;
+    color: var(--dark-color);
+}
+p{
+    margin-bottom: 2rem;
+}
+ul{
+    list-style: none;
+}
+
+/*...Utilitly...*/
+.btn{
+    padding: .75rem ;
+    background-color: #FFF;
+    color: #fff;
+}
+.btn:hover{opacity: 0.9;}
+.pr-btn{background-color: var(--pr-color);}
+.sc-btn{background-color: var(--sc-color);}
+.current{
+    background-color: var(--pr-color);
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+
+.nCurrent{
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.current:hover,.nCurrent:hover{
+    color: #333;
+    background-color: var(--light-color);
+}
+.container{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 2rem;
+}
+.category{
+    display: inline-block;
+    font-size: .55rem;
+    border-radius: 15px;
+    color: #fff;
+    padding: .4rem .6rem;
+    text-transform:uppercase ;
+    margin-bottom: .5rem;
+}
+.sport{background-color: var(--sport-color);}
+.ent{background-color: var(--ent-color);}
+.tech{background-color: var(--tech-color);}
+
+.card{
+    padding: 1rem;
+}
+
+.bg-light{background-color: #FFF; transition: .2s ease-in-out;}
+.bg-dark{
+    background-color: #333;
+    color: #fff;
+    transition: .2s ease-in-out;
+}
+.bg-dark h3{color: #fff;}
+.bg-pr h3{color: #fff;}
+.bg-pr{
+    background-color: var(--pr-color);
+    color: #FFF;
+    transition: .2s ease-in-out;}
+.bg-sc{
+    background-color: var(--sc-color);
+    color: #FFF;}
+
+.py-p1{padding: 1.5rem 0;}
+.py-p2{padding: 2rem 0;}
+.py-p3{padding: 3rem 0;}
+.p-p1{padding: 1.5rem;}
+.p-p2{padding: 2rem;}
+.p-p3{padding: 3rem;}
+
+.l-header{font-size: 3rem;}
+.d-block{display: block;}
+/*NavBar....*/
+
+ .navBar{
+background-color: #dde4f1;
+position: sticky;
+top: 0;
+left: 0;
+z-index: 2;
+}
+.navBar .container{
+    display: grid;
+    grid-template-columns: 6fr 3fr 2fr;
+    align-items: center;
+    padding: 1rem;
+
+}
+.navBar .container .navBtns{
+    justify-self: end;
+}
+.navBar .container .social{
+    justify-self: center;
+}
+
+.navBar .container .social a{
+    color: #06389b;
+    margin-right: .5rem;
+}
+.navBar .container .social a:hover{
+    color: #555;
+}
+
+.navBar img{
+    width:180px;
+}
+
+
+
+/*...Showcase...*/
+.showcase{
+    background-color: var(--dark-color);
+    position: relative;
+    z-index: 0;
+    padding: 2rem;
+   
+}
+.showcase::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../Images/ml.png) no-repeat center center/cover ;
+    background-size: 100%x;
+    opacity: .4;
+    z-index: -1;
+
+}
+
+
+.showcase #showcaseContent{
+    z-index: 1;
+    color: #FFF;
+
+}
+#showcaseGrid{
+    /* display: grid;
+    grid-template-columns:repeat(2,1fr);
+    align-items: center; */
+    height:calc(100vh - 8.2rem);
+    overflow: auto;
+
+
+}
+#showcaseGrid form{
+    text-align: center;
+    margin: auto;
+}
+
+#showcaseContent a{
+    padding: .5rem 1.5rem;
+}
+form .btn{
+    display: block;
+    font-weight: bold;
+    margin: auto;
+}
+form label{
+    font-size: 5rem;
+    background-color: #009cff;
+    border-radius: 1rem;
+    text-align: center;
+    padding-bottom: 20px;
+    color: white;
+}
+form textarea{
+    background-color: #009cff8a;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.1rem;
+    color: white;
+    border-radius: 9px;
+    padding: 1rem;
+    outline: none;
+}
+/*...Articles......*/
+
+.cardsGrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+  
+  
+}
+
+.cardsGrid .bg-light:hover{background-color: thistle;}
+
+.cardsGrid .bg-dark:hover{
+    background-color: #444;
+}
+.cardsGrid .bg-pr:hover{
+    background-color: #ec4141;
+}
+
+.cardsGrid img{
+    width: 100%;
+}
+
+.cardsGrid .card:first-child,
+.cardsGrid .card:last-child{
+    display:grid;
+    grid-column: 1/ span 2;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+.cardsGrid .card:last-child{
+    grid-column: 2/ span 2;
+
+}
+
+/*...footer...*/
+
+.mainFooter .container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  
+}
+
+.mainFooter img{
+    width: 150px;
+}
+
+.mainFooter input[type="email"]{
+ padding: .5rem;
+ width: 90%;
+ margin-bottom: .5rem;
+
+}
+.mainFooter input[type="email"]:focus{
+outline: none;
+
+}
+.mainFooter input[type="submit"]{
+ padding: .5rem;
+ width: 90%;
+ margin-bottom: .5rem;
+ border: none;
+
+}
+
+
+
+.mainFooter ul li{
+border-bottom: 1px #777 dotted;
+ padding: .5rem 0 ; 
+}
+.mainFooter ul li a{
+color: #fff;
+
+
+}
+.mainFooter ul li a:hover{
+color: var(--pr-color);
+
+
+}
+
+.mainFooter .btn{
+padding: .75rem 1.5rem;
+}
+
+.footer{
+    grid-column: 1 / span 4;
+    background-color: #555;
+    text-align: center;
+    font-size: .75rem;
+    padding: .5rem;
+}
+
+.footer p{
+    margin: .5rem 0;
+}
+
+
+/*............About..................*/
+.about{
+    margin: 2rem 0;
+}
+.about .container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    gap: 1.5rem;
+}
+
+.about .container .aboutContent{
+    grid-row: 1 / span 3;
+}
+
+.about p,
+.article p{
+    margin: .5rem 0;
+}
+
+.about .btn,
+.article .btn{
+    display: inline-block;
+width: 100%;
+text-align: center;
+padding: .5rem 0;
+}
+
+
+
+/*........Article.......*/
+.article{
+    margin: 2rem 0;
+}
+.article .container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    gap: 1.5rem;
+
+
+}
+
+.article .container .articleContent{
+    grid-row: 1 / span 3;
+}
+.article img{
+    width: 100%;
+}
+.article li{
+    padding: .5rem 0;
+    border-bottom: 1px #444 dotted;
+}
+.categoriesAside{
+    padding-right: 2.5rem;
+}
+
+
+.meta{
+    background-color: #eee;
+   
+}
+.meta {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem ;
+    align-items: center;
+}
+
+.meta p{
+    display: inline-block;
+}
+
+.meta  *:last-child{
+    display: inline-block;
+    justify-self: end;
+    margin-top: .5rem;
+  
+}
